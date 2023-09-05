@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --platform=node --minify --outfile=dist/index.js"
+    "build": "esbuild src/index.js --bundle --platform=node --format=cjs --minify --outfile=dist/index.js"
   },
   "bin": {
     "create-node-application": "./dist/index.js"

@@ -4,13 +4,36 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild src/index.js --bundle --platform=node --minify --outfile=dist/index.js"
   },
-  "keywords": [],
+  "bin": {
+    "create-node-application": "./dist/index.js"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "javascript",
+    "esbuild",
+    "cli",
+    "create",
+    "application",
+    "starter",
+    "template",
+    "scaffold",
+    "boilerplate"
+  ],
   "author": {
     "name": "Anton Kalik",
     "email": "antonkalik@gmail.com",
     "url": "https://idedy.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.2",
+    "prettier": "3.0.3"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "name": "create-node-application",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.1.0",
+  "description": "A Node.js project generator tool that scaffolds out a structured application setup with best practices, developer tooling, and custom configurations. Designed for simplicity, ease of use, and to streamline the bootstrapping process of a new Node.js application. Includes ESBuild, TypeScript, ESLint, Prettier, Jest, and more, with a focus on developer experience and productivity. Created by Anton Kalik (github.com/antonkalik).",
   "main": "index.ts",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --format=cjs --minify --outfile=dist/index.js"
@@ -28,12 +28,7 @@
     "url": "https://idedy.com"
   },
   "license": "MIT",
-  "dependencies": {
-    "fs-extra": "^11.1.1",
-    "yargs": "^17.7.2"
-  },
   "devDependencies": {
-    "esbuild": "^0.19.2",
-    "prettier": "3.0.3"
+    "esbuild": "^0.19.2"
   }
 }

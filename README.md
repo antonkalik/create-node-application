@@ -2,7 +2,7 @@
 
 **_Node.js Project Generator Tool_**
 
-![Optional Project Banner](./path-to-banner-image.png)
+![ezgif-5-a1fbf20019](https://github.com/antonkalik/create-node-application/assets/8144055/0048c580-97f5-4a14-aedb-fbd316b40071)
 
 A zero dependency streamlined tool to bootstrap your Node.js applications. Pre-configured with best practices in mind, integrating powerful developer tools such as ESBuild, TypeScript, ESLint, Prettier, Jest, and more.
 
@@ -13,6 +13,7 @@ Available frameworks: Express.js, Koa.js. More frameworks will be added soon.
 - 🛠️ **Integrated Developer Tools:** Comes with ESBuild, TypeScript, ESLint, and Prettier out of the box.
 - ✅ **Ready for Testing:** Pre-configured with Jest to jumpstart your testing.
 - 📂 **Structured:** Designed with a clean folder structure for scalability.
+
 
 ## 📦 Installation
 

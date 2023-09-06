@@ -1,6 +1,6 @@
 {
   "name": "create-node-application",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Node.js project generator tool that scaffolds out a structured application setup with best practices, developer tooling, and custom configurations. Designed for simplicity, ease of use, and to streamline the bootstrapping process of a new Node.js application. Includes ESBuild, TypeScript, ESLint, Prettier, Jest, and more, with a focus on developer experience and productivity. Created by Anton Kalik (github.com/antonkalik).",
   "main": "index.ts",
   "scripts": {

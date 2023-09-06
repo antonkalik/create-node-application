@@ -1,4 +1,4 @@
-const getExpressContent = () => `
+const expressContent = `
 import express from 'express';
 
 const app = express();
@@ -11,4 +11,4 @@ app.listen(PORT, () => {
 });
 `;
 
-module.exports = getExpressContent;
+module.exports = expressContent;

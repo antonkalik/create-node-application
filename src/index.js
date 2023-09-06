@@ -1,15 +1,9 @@
 #!/usr/bin/env node
 
-const welcomeMessage = require("./functions/welcomeMessage.js");
+const showWelcomeMessage = require("./functions/showWelcomeMessage.js");
 const argsToObject = require("./functions/argsToObject.js");
-const createExpressApp = require("./frameworksFunctions/createExpressApp.js");
-const createKoaApp = require("./frameworksFunctions/createKoaApp.js");
+const createApplication = require("./common/createApplication.js");
 const log = require("./functions/log.js");
-
-const frameworkFunctions = {
-  express: createExpressApp,
-  koa: createKoaApp,
-};
 
 const [appName, ...args] = process.argv.slice(2);
 const argsObject = argsToObject(args);
@@ -20,14 +14,7 @@ if (!framework) {
   process.exit(1);
 }
 
-const setupFunction = frameworkFunctions[framework];
-
-welcomeMessage().then(() => {
-  if (setupFunction) {
-    setupFunction(appName);
-  } else {
-    log.error("Unsupported framework or no framework specified.");
-  }
-})
-
-
+showWelcomeMessage().then(() => {
+  log.text("\nCreating", framework, "application started!\n");
+  createApplication(appName, framework);
+});

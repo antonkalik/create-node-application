@@ -6,13 +6,13 @@ const createApplication = require("./common/createApplication.js");
 const log = require("./functions/log.js");
 
 const [appName, ...args] = process.argv.slice(2);
-const argsObject = argsToObject(args);
-const framework = argsObject.framework || argsObject.fw;
-
-if (!framework) {
-  log.error("No framework specified!");
+if (!appName) {
+  log.error("No application name specified!");
   process.exit(1);
 }
+
+const argsObject = argsToObject(args);
+const framework = argsObject.framework || argsObject.fw || "express";
 
 showWelcomeMessage().then(() => {
   log.text("\nCreating", framework, "application started!\n");

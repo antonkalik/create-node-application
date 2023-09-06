@@ -71,6 +71,6 @@ Contributions are welcomed! Open an issue for any bugs or feature requests, or c
 
 **Reach out for any queries:**
 
-- GitHub: github.com/antonkalik
-- Twitter: @idedycom
-- Email: antonkalik@gmail.com
+- GitHub: [github.com/antonkalik](https://github.com/antonkalik)
+- Twitter: [@idedycom](https://twitter.com/idedycom)
+- Email: [antonkalik@gmail.com](mailto:antonkalik@gmail.com)

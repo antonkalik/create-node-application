@@ -27,6 +27,11 @@
     "email": "antonkalik@gmail.com",
     "url": "https://idedy.com"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.19.2"

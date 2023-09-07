@@ -16,8 +16,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          registry-url: https://registry.npmjs.org/
-          node-version: "18"
+          registry-url: "https://npm.pkg.github.com/"
+          node-version: "18.x"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install

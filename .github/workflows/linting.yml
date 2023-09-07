@@ -1,0 +1,90 @@
+name: Quality
+
+on: [pull_request]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.setupJob.outcome }}
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - id: setupJob
+        run: echo "Setup Complete"
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Build the project
+        run: npm run build
+
+  prettier:
+    needs: setup
+    runs-on: ubuntu-latest
+    if: needs.setup.outputs.status == 'success'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Run Prettier check
+        run: npx prettier --check src/
+
+  eslint:
+    needs: setup
+    runs-on: ubuntu-latest
+    if: needs.setup.outputs.status == 'success'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Run ESLint check
+        run: npx eslint src/

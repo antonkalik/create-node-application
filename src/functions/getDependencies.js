@@ -4,12 +4,12 @@ const commonDevDependencies = [
   "esbuild",
   "ts-node",
   "nodemon",
-  'eslint',
-  '@typescript-eslint/parser',
-  '@typescript-eslint/eslint-plugin',
+  "eslint",
+  "@typescript-eslint/parser",
+  "@typescript-eslint/eslint-plugin",
   "eslint-config-prettier",
   "eslint-plugin-prettier",
-  'prettier',
+  "prettier",
 ];
 
 function getDependencies(framework) {

@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --format=cjs --minify --outfile=dist/index.js",
-    "semantic-release": "semantic-release --branches main"
+    "semantic-release": "semantic-release --branches main",
+    "commit": "cz"
   },
   "bin": {
     "create-node-application": "./dist/index.js"
@@ -47,6 +48,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.19.2",
     "eslint": "^8.48.0",
     "husky": "^8.0.3",

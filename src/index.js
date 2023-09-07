@@ -16,5 +16,6 @@ const framework = argsObject.framework || argsObject.fw || "express";
 
 showWelcomeMessage().then(() => {
   log.text("\nCreating", framework, "application started!\n");
+
   createApplication(appName, framework);
 });

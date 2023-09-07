@@ -9,19 +9,20 @@
 
 [![npm version](https://badge.fury.io/js/create-node-application.svg)](https://badge.fury.io/js/create-node-application)
 ![Node version](https://img.shields.io/badge/node-18.17.1-green)
+[![Release](https://github.com/antonkalik/create-node-application/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/antonkalik/create-node-application/actions/workflows/release.yml)
 
 A zero-dependency streamlined node js generator tool to bootstrap your Node.js applications. Pre-configured with best practices in mind, integrating powerful developer tools such as ESBuild, TypeScript, ESLint, Prettier, Jest, and more.
 
 ![ezgif-5-a1fbf20019](https://github.com/antonkalik/create-node-application/assets/8144055/0048c580-97f5-4a14-aedb-fbd316b40071)
 
 Available frameworks: Express.js, Koa.js. More frameworks will be added soon.
+
 ## 🌟 Features
 
 - 🚀 **Quick Start:** Spin up new projects in seconds.
 - 🛠️ **Integrated Developer Tools:** Comes with ESBuild, TypeScript, ESLint, and Prettier out of the box.
 - ✅ **Ready for Testing:** Pre-configured with Jest to jumpstart your testing.
 - 📂 **Structured:** Designed with a clean folder structure for scalability.
-
 
 ## 📦 Installation
 
@@ -63,7 +64,7 @@ create-node-application my-project -fw=express
 
 For now we have only two frameworks available: `express` and `koa`.
 
-If leave framework option empty, the default framework will be `express`. 
+If leave framework option empty, the default framework will be `express`.
 
 After generation `cd my-project`. Installation is not need, just run `npm run dev` or `yarn dev` to start the application.
 

@@ -1,12 +1,12 @@
-name: Publish to NPM
+name: Auto-Tag and Publish to NPM
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - main
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,14 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
 
       - run: npm install
+
+      - name: Bump package version and create tag
+        run: |
+          npm version patch -m "Bump to %s"
+        id: version
+
+      - name: Push tag
+        run: git push origin refs/tags/${{ steps.version.outputs.new_version }}
 
       - name: Publish to NPM
         run: npm publish --access public

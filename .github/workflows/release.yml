@@ -1,40 +1,53 @@
-name: Publish to NPM
+name: Release package
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "**.md"
+      - ".github/**"
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    name: Release and Publish
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node.js 18.17.1
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.17.1
           registry-url: "https://registry.npmjs.org/"
+          node-version: "18.17.1"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Set npm registry to public
-        run: npm config set registry https://registry.npmjs.org/
+      # Ensure any changes (like generated files) are committed
+      - name: Check for uncommitted changes
+        run: |
+          if ! git diff-index --quiet HEAD --; then
+            git config user.name 'GitHub Actions'
+            git config user.email 'actions@github.com'
+            git add -A
+            git commit -m "Commit changes before version bump"
+          fi
 
       - name: Bump package version and create tag
         run: |
           npm version patch -m "Bump to %s"
         id: version
 
-      - name: Push newly created tag
-        run: git push origin refs/tags/${{ steps.version.outputs.new_version }}
-
-      - name: Publish to NPM
+      - name: Publish package to NPM
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push changes back to repository
+        run: |
+          git push && git push --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

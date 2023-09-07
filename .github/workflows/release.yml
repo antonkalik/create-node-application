@@ -23,9 +23,6 @@ jobs:
       - name: Print Node.js version
         run: node --version
 
-      - name: Print NPM_TOKEN
-        run: echo $NPM_TOKEN
-
       - name: Setup .npmrc file for authentication
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
 

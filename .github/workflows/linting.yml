@@ -1,11 +1,28 @@
-name: Lint and Prettier Checks
+name: Code Quality Checks
 
 on: [pull_request]
 
 jobs:
-  run-linters:
-    name: Run linters
+  build:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Build the project
+        run: npm run build
+
+  setup:
+    needs: build
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.setupJob.outcome }}
 
     steps:
       - name: Check out code
@@ -19,8 +36,39 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - id: setupJob
+        run: echo "Setup Complete"
+
+  prettier-check:
+    needs: setup
+    runs-on: ubuntu-latest
+    if: needs.setup.outputs.status == 'success'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
       - name: Run Prettier check
         run: npx prettier --check src/
+
+  eslint-check:
+    needs: setup
+    runs-on: ubuntu-latest
+    if: needs.setup.outputs.status == 'success'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
 
       - name: Run ESLint check
         run: npx eslint src/

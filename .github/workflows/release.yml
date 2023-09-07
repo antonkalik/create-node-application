@@ -36,8 +36,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
-
+        run: |
+          npm set registry https://registry.npmjs.org/
+          npx semantic-release
     permissions:
       contents: write
       packages: write

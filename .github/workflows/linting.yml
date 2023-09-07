@@ -3,23 +3,7 @@ name: Code Quality Checks
 on: [pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-
-      - name: Build the project
-        run: npm run build
-
   setup:
-    needs: build
     runs-on: ubuntu-latest
     outputs:
       status: ${{ steps.setupJob.outcome }}
@@ -38,6 +22,22 @@ jobs:
 
       - id: setupJob
         run: echo "Setup Complete"
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Build the project
+        run: npm run build
 
   prettier-check:
     needs: setup

@@ -28,6 +28,10 @@
           {
             "type": "chore",
             "release": "patch"
+          },
+          {
+            "type": "minor",
+            "release": "patch"
           }
         ]
       }

@@ -40,7 +40,7 @@ function createApplication(appName, framework) {
       executeCommand(
         `npm install -D ${devDependencies.join(" ")}`,
         basePath,
-        (data) => {},
+        () => {},
         () => {
           clearInterval(installDevDependenciesProgress);
           log.success("Done!");

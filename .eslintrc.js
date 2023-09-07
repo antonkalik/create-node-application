@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    node: true,
   },
   extends: "eslint:recommended",
   overrides: [
@@ -10,7 +11,7 @@ module.exports = {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ["src/**/*.js", ".eslintrc.{js,cjs}"],
       parserOptions: {
         sourceType: "script",
       },

@@ -39,7 +39,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-  prettier-check:
+  prettier:
     needs: setup
     runs-on: ubuntu-latest
     if: needs.setup.outputs.status == 'success'
@@ -56,7 +56,7 @@ jobs:
       - name: Run Prettier check
         run: npx prettier --check src/
 
-  eslint-check:
+  eslint:
     needs: setup
     runs-on: ubuntu-latest
     if: needs.setup.outputs.status == 'success'

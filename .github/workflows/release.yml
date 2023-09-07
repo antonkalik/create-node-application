@@ -1,4 +1,4 @@
-name: Auto-Tag and Publish to NPM
+name: Publish to NPM
 
 on:
   push:
@@ -8,24 +8,30 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    name: Release and Publish
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js 18.17.1
+      - name: Setup Node.js 18.17.1
         uses: actions/setup-node@v3
         with:
           node-version: 18.17.1
           registry-url: "https://registry.npmjs.org/"
 
-      - run: npm install
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set npm registry to public
+        run: npm config set registry https://registry.npmjs.org/
 
       - name: Bump package version and create tag
         run: |
           npm version patch -m "Bump to %s"
         id: version
 
-      - name: Push tag
+      - name: Push newly created tag
         run: git push origin refs/tags/${{ steps.version.outputs.new_version }}
 
       - name: Publish to NPM

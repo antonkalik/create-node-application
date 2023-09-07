@@ -2,7 +2,7 @@
   "name": "create-node-application",
   "version": "1.2.5",
   "description": "A Node.js project generator tool that scaffolds out a structured application setup with best practices, developer tooling, and custom configurations. Designed for simplicity, ease of use, and to streamline the bootstrapping process of a new Node.js application. Includes ESBuild, TypeScript, ESLint, Prettier, Jest, and more, with a focus on developer experience and productivity. Created by Anton Kalik (github.com/antonkalik).",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --format=cjs --minify --outfile=dist/index.js"
   },
@@ -28,12 +28,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/antonkalik/create-node-application.git"
+    "url": "https://github.com/antonkalik/create-node-application.git",
+    "owner": "antonkalik",
+    "name": "create-node-application"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "public",
-    "tag": "latest"
+    "access": "public"
   },
   "author": {
     "name": "Anton Kalik",
@@ -58,6 +58,49 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "semantic-release": "^21.1.1"
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "main"
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "releaseRules": [
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "build",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "minor",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
   },
   "engines": {
     "node": "18.17.x"

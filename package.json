@@ -51,7 +51,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.5",
+    "@semantic-release/release-notes-generator": "^11.0.7",
     "cz-conventional-changelog": "^3.3.0",
     "esbuild": "^0.19.2",
     "eslint": "^8.48.0",
@@ -62,7 +65,51 @@
   },
   "release": {
     "branches": [
-      "main"
+      {
+        "name": "main"
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "releaseRules": [
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "build",
+              "release": "patch"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "minor",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ]
     ]
   },
   "engines": {

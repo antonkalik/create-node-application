@@ -37,8 +37,7 @@
     "url": "https://github.com/antonkalik/create-node-application.git"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "author": {
     "name": "Anton Kalik",

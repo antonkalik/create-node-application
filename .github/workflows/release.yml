@@ -24,8 +24,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Clear npm cache
+        run: npm cache clean -f
+
       - name: Semantic Release
         run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          DEBUG: "*"

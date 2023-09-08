@@ -27,13 +27,3 @@ jobs:
 
       - name: Semantic Release
         run: npm run semantic-release
-#      - name: Publish package to NPM
-#        run: npm publish --access public
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#
-#      - name: Push changes back to repository
-#        run: |
-#          git push && git push --tags
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

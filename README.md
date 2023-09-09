@@ -7,9 +7,16 @@
 <path d="M35.248 2.40267C35.248 1.10484 36.3001 0.0527344 37.598 0.0527344H51.6976C52.9954 0.0527344 54.0475 1.10483 54.0475 2.40266V30.6018C54.0475 31.8997 52.9954 32.9518 51.6976 32.9518H37.598C36.3001 32.9518 35.248 31.8997 35.248 30.6018V2.40267Z" fill="#95DBFF"/>
 </svg>
 
-[![npm version](https://badge.fury.io/js/create-node-application.svg)](https://badge.fury.io/js/create-node-application)
-![Node version](https://img.shields.io/badge/node-18.17.1-green)
+[![npm](https://badge.fury.io/js/create-node-application.svg)](https://badge.fury.io/js/create-node-application)
+![downloads](https://img.shields.io/npm/dt/create-node-application)
+![node](https://img.shields.io/badge/node-18.17.1-green)
+
 [![Release](https://github.com/antonkalik/create-node-application/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/antonkalik/create-node-application/actions/workflows/release.yml)
+![licenses](https://img.shields.io/npm/l/create-node-application)
+![contributors](https://img.shields.io/github/contributors/antonkalik/create-node-application)
+![last-commit](https://img.shields.io/github/last-commit/antonkalik/create-node-application)
+![issues](https://img.shields.io/github/issues/antonkalik/create-node-application)
+![pull-requests](https://img.shields.io/github/issues-pr/antonkalik/create-node-application)
 
 A zero-dependency streamlined node js generator tool to bootstrap your Node.js applications. Pre-configured with best practices in mind, integrating powerful developer tools such as ESBuild, TypeScript, ESLint, Prettier, Jest, and more.
 

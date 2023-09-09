@@ -17,6 +17,10 @@ A zero-dependency streamlined node js generator tool to bootstrap your Node.js a
 
 Available frameworks: Express.js, Koa.js. More frameworks will be added soon.
 
+**Note:** Please report any bugs or feature requests.\
+**GitHub Link:** [github.com/antonkalik/create-node-application](https://github.com/antonkalik/create-node-application)\
+**NPM Link:** [npmjs.com/package/create-node-application](https://www.npmjs.com/package/create-node-application)
+
 ## 🌟 Features
 
 - 🚀 **Quick Start:** Spin up new projects in seconds.
@@ -46,24 +50,23 @@ npx create-node-application <project-name> [options]
 
 Initiate a new project by:
 
-```angular2html
+```bash
 create-node-application <project-name> [options]
 ```
 
 **Example:** Create a new project called `my-project` with Express.js framework:
 
-```angular2html
+```bash
 create-node-application my-project -framework=express
 ```
 
 or shorter:
 
-```angular2html
+```bash
 create-node-application my-project -fw=express
 ```
 
 For now we have only two frameworks available: `express` and `koa`.
-
 If leave framework option empty, the default framework will be `express`.
 
 After generation `cd my-project`. Installation is not need, just run `npm run dev` or `yarn dev` to start the application.
@@ -83,3 +86,5 @@ Contributions are welcomed! Open an issue for any bugs or feature requests, or c
 - GitHub: [github.com/antonkalik](https://github.com/antonkalik)
 - Twitter: [@idedycom](https://twitter.com/idedycom)
 - Email: [antonkalik@gmail.com](mailto:antonkalik@gmail.com)
+- Website: [idedy.com](https://idedy.com)
+- LinkedIn: [linkedin.com/in/antonkalik](https://www.linkedin.com/in/antonkalik/)

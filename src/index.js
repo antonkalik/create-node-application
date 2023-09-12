@@ -12,7 +12,7 @@ if (!appName) {
 }
 
 const argsObject = argsToObject(args);
-const framework = argsObject.framework || argsObject.fw || "express";
+const framework = argsObject["framework"] || argsObject["fw"] || "express";
 
 showWelcomeMessage().then(() => {
   log.text("\nCreating", framework, "application started!\n");

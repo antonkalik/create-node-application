@@ -24,9 +24,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Clear npm cache
-        run: npm cache clean -f
-
       - name: Semantic Release
         run: npm run semantic-release
         env:

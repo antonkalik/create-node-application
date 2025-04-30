@@ -1,6 +1,6 @@
-const log = require("./log");
+import log from "./log";
 
-const showContactMessage = () => {
+export default function () {
   log.dim("\n--------------------------------------------------\n");
   log.dim("Feel free to contact me:");
   log.text("github.com/antonkalik");
@@ -8,6 +8,4 @@ const showContactMessage = () => {
   log.text("antonkalik@gmail.com");
   log.dim("\n--------------------------------------------------\n");
   log.dim("Happy coding!\n");
-};
-
-module.exports = showContactMessage;
+}

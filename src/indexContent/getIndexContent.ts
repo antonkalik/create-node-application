@@ -1,12 +1,13 @@
-const expressContent = require("./expressContent");
-const koaContent = require("./koaContent");
+import expressContent from "./expressContent";
+import koaContent from "./koaContent";
+import { Framework } from "../types";
 
 const frameworksContent = {
-  express: expressContent,
-  koa: koaContent,
+  [Framework.Express]: expressContent,
+  [Framework.Koa]: koaContent,
 };
 
-function getIndexContent(framework) {
+export default function getIndexContent(framework: Framework) {
   if (!framework) {
     throw new Error("Should provide framework");
   }
@@ -19,5 +20,3 @@ function getIndexContent(framework) {
 
   return content;
 }
-
-module.exports = getIndexContent;

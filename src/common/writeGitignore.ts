@@ -1,7 +1,7 @@
-const writeFile = require("./writeFile");
+import writeFile from "./writeFile";
 
-module.exports = (basePath) =>
-  writeFile(
+export default (basePath: string) =>
+  writeFile<string>(
     `
 # Main
 /.idea/

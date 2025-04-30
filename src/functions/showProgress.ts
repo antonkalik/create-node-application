@@ -1,4 +1,4 @@
-function showProgress(message, maxDots = 50) {
+export default function showProgress(message: string, maxDots = 50) {
   process.stdout.write("\x1b[90m" + message + "\x1b[0m" + " ");
   let dotCounter = 0;
 
@@ -13,5 +13,3 @@ function showProgress(message, maxDots = 50) {
 
   return interval;
 }
-
-module.exports = showProgress;

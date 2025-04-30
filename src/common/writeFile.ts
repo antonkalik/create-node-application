@@ -1,15 +1,16 @@
-const fs = require("fs").promises;
-const path = require("path");
+import { promises as fs } from "node:fs";
+import path from "node:path";
 
-async function writeFile(content = {}, basePath, name) {
+async function writeFile<T>(content: T, basePath: string, name: string) {
   let dataToWrite;
+  const isContentString = typeof content === "string";
 
-  if (typeof content === "string") {
+  if (isContentString) {
     dataToWrite = content;
   } else {
     try {
       dataToWrite = JSON.stringify(content, null, 2);
-    } catch (err) {
+    } catch {
       throw new Error("Provided content cannot be stringified to JSON.");
     }
   }
@@ -17,4 +18,4 @@ async function writeFile(content = {}, basePath, name) {
   await fs.writeFile(path.join(basePath, name), dataToWrite);
 }
 
-module.exports = writeFile;
+export default writeFile;

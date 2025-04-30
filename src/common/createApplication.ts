@@ -1,16 +1,23 @@
-const path = require("path");
-const fs = require("fs");
-const log = require("../functions/log");
-const { execSync } = require("child_process");
-const showProgress = require("../functions/showProgress");
-const showFinalMessage = require("../functions/showFinalMessage");
-const showContactMessage = require("../functions/showContactMessage");
-const executeCommand = require("../functions/executeCommand");
-const writeFiles = require("./writeFiles");
-const getIndexContent = require("../indexContent/getIndexContent");
-const getDependencies = require("../functions/getDependencies");
+import path from "node:path";
+import fs from "node:fs";
+import log from "../functions/log";
+import { exec } from "node:child_process";
+import { promisify } from "util";
+import showProgress from "../functions/showProgress";
+import showFinalMessage from "../functions/showFinalMessage";
+import showContactMessage from "../functions/showContactMessage";
+import executeCommand from "../functions/executeCommand";
+import writeFiles from "./writeFiles";
+import getIndexContent from "../indexContent/getIndexContent";
+import getDependencies from "../functions/getDependencies";
+import { Framework } from "../types";
 
-function createApplication(appName, framework) {
+const asyncExec = promisify(exec);
+
+export default async function createApplication(
+  appName: string,
+  framework: Framework,
+) {
   const basePath = path.join(process.cwd(), appName);
 
   if (!fs.existsSync(basePath)) {
@@ -21,7 +28,7 @@ function createApplication(appName, framework) {
     return;
   }
 
-  execSync("npm init -y", { cwd: basePath });
+  await asyncExec("npm init -y", { cwd: basePath });
 
   const installDependenciesProgress = showProgress("• Installing dependencies");
   const { dependencies, devDependencies } = getDependencies(framework);
@@ -66,5 +73,3 @@ function createApplication(appName, framework) {
     },
   );
 }
-
-module.exports = createApplication;

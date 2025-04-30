@@ -1,11 +1,7 @@
 ## Create Node Application
 
-![create-node-application](https://github.com/antonkalik/create-node-application/assets/8144055/61bda9b1-576c-4dcf-b428-e2a10b3bf147)<svg width="90" height="87" viewBox="0 0 90 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4.69922 21.2012H84.5969V84.6493C84.5969 85.9471 83.5448 86.9992 82.2469 86.9992H7.04915C5.75132 86.9992 4.69922 85.9471 4.69922 84.6493V21.2012Z" fill="#59B6E6"/>
-<path d="M0 4.75227C0 3.45444 1.0521 2.40234 2.34993 2.40234H86.9474C88.2453 2.40234 89.2974 3.45444 89.2974 4.75227V18.8519C89.2974 20.1497 88.2453 21.2018 86.9474 21.2018H2.34993C1.0521 21.2018 0 20.1497 0 18.8519V4.75227Z" fill="#59B6E6"/>
-<path d="M4.69922 14.1527C4.69922 12.8548 5.75132 11.8027 7.04915 11.8027H82.2469C83.5448 11.8027 84.5969 12.8548 84.5969 14.1527V21.2025H4.69922V14.1527Z" fill="#3E8AC5"/>
-<path d="M35.248 2.40267C35.248 1.10484 36.3001 0.0527344 37.598 0.0527344H51.6976C52.9954 0.0527344 54.0475 1.10483 54.0475 2.40266V30.6018C54.0475 31.8997 52.9954 32.9518 51.6976 32.9518H37.598C36.3001 32.9518 35.248 31.8997 35.248 30.6018V2.40267Z" fill="#95DBFF"/>
-</svg>
+<img src="https://github.com/user-attachments/assets/34134ba1-26a7-4058-9078-45ef68d9d8cc" alt="generate-to-me-a-bag-with-wrench-inside-in-neo-sty" width="300">
+
 
 [![npm](https://badge.fury.io/js/create-node-application.svg)](https://badge.fury.io/js/create-node-application)
 ![downloads](https://img.shields.io/npm/dt/create-node-application)

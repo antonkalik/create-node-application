@@ -1,4 +1,4 @@
-const showWelcomeMessage = () => {
+export default function () {
   console.log("\x1b[34m%s\x1b[0m", "#######################################");
   console.log("\x1b[34m%s\x1b[0m", "#                                     #");
   console.log(
@@ -21,9 +21,7 @@ const showWelcomeMessage = () => {
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve();
+      resolve(undefined);
     }, 1000);
   });
-};
-
-module.exports = showWelcomeMessage;
+}

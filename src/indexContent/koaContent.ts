@@ -1,4 +1,4 @@
-const koaContent = `
+export default `
 import Koa, { ExtendableContext } from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
@@ -18,5 +18,3 @@ app.on('error', (error: Error, ctx: ExtendableContext) => {
 
 app.listen(port || 9999);
 `;
-
-module.exports = koaContent;

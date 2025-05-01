@@ -1,7 +1,11 @@
+import { Framework } from "../types";
+
 const commonDevDependencies = [
-  "typescript",
+  "@eslint/js",
   "@types/node",
+  "globals",
   "esbuild",
+  "eslint-plugin-n",
   "ts-node",
   "nodemon",
   "eslint",
@@ -10,19 +14,26 @@ const commonDevDependencies = [
   "eslint-config-prettier",
   "eslint-plugin-prettier",
   "prettier",
+  "typescript",
+  "typescript-eslint",
 ];
 
-function getDependencies(framework) {
+export default function getDependencies(framework: Framework) {
   if (!framework) {
     throw new Error("Framework is not defined!");
   }
 
   const frameworkDependenciesObject = {
-    express: {
+    [Framework.Express]: {
       dependencies: ["express", "body-parser", "cors"],
-      devDependencies: ["@types/express", "@types/body-parser", "@types/cors"],
+      devDependencies: [
+        "@types/express",
+        "@types/body-parser",
+        "@types/cors",
+        "@types/jest",
+      ],
     },
-    koa: {
+    [Framework.Koa]: {
       dependencies: ["koa", "koa-router", "koa-bodyparser", "@koa/cors"],
       devDependencies: [
         "@types/koa",
@@ -36,7 +47,7 @@ function getDependencies(framework) {
   const frameworkDependencies = frameworkDependenciesObject[framework];
 
   if (!frameworkDependencies) {
-    throw new Error("Framework is not valid!");
+    throw new Error(`Framework ${framework} does not supported!`);
   }
 
   return {
@@ -50,5 +61,3 @@ function getDependencies(framework) {
     ],
   };
 }
-
-module.exports = getDependencies;

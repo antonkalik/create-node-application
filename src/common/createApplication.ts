@@ -44,6 +44,7 @@ export default async function createApplication(
       const installDevDependenciesProgress = showProgress(
         "• Installing devDependencies",
       );
+
       executeCommand(
         `npm install -D ${devDependencies.join(" ")}`,
         basePath,

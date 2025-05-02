@@ -3,7 +3,6 @@ import { Framework } from "../types";
 const commonDevDependencies = [
   "@eslint/js",
   "@types/node",
-  "globals",
   "esbuild",
   "eslint-plugin-n",
   "ts-node",

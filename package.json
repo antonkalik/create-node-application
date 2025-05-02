@@ -120,8 +120,5 @@
   "engines": {
     "node": "22.x.x"
   },
-  "type": "module",
-  "dependencies": {
-    "globals": "^16.0.0"
-  }
+  "type": "module"
 }

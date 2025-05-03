@@ -2,7 +2,6 @@
 
 <img src="https://github.com/user-attachments/assets/34134ba1-26a7-4058-9078-45ef68d9d8cc" alt="generate-to-me-a-bag-with-wrench-inside-in-neo-sty" width="300">
 
-
 [![npm](https://badge.fury.io/js/create-node-application.svg)](https://badge.fury.io/js/create-node-application)
 ![downloads](https://img.shields.io/npm/dt/create-node-application)
 ![node](https://img.shields.io/badge/node-18.17.1-green)
